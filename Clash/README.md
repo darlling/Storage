@@ -4,7 +4,9 @@
 place `config.yaml` in `$HOME/.config/clash/config.yaml`
 
 `proxy-providers`里的类型为`file`，故需准备好代理文件，放置路径参考配置里的路径即可  
+
 此示例的代理文件为`DuangCloud.yaml`，路径为`clash`用户配置根路径`./`  
+
 代理文件具体格式参考：[https://lancellc.gitbook.io/clash/clash-config-file/proxy-provider](https://lancellc.gitbook.io/clash/clash-config-file/proxy-provider)
 
 ```yaml
@@ -61,4 +63,5 @@ proxies:
 
 ### 设想解决方案
 在`config.yaml`中添加入`proxies`字段并将代理节点全部加入，配套修改`proxy-groups`中的相应字段即可  
+
 至于`RuleSet`规则集文件路径问题，尚未可知是否能自动生成在手机内置存储中
