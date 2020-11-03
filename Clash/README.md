@@ -61,7 +61,7 @@ proxies:
     - 若订阅链接提供的是符合上述条件的`yaml`配置文件，则直接置`type`为`http`，`url`填入订阅链接即可
     - 若订阅链接提供的是不符合上述条件的复杂`yaml`配置文件，则我在`Clash For Windows`上是将配置文件下载到本地后手动编辑使其符合条件，即`DuangCloud.yaml`，故使用的`type`为`file`。`Android`如何实现尚未可知
 
-### 设想解决方案
+#### 设想解决方案
 在`config.yaml`中添加入`proxies`字段并将代理节点全部加入，配套修改`proxy-groups`中的相应字段即可  
 
 至于`RuleSet`规则集文件路径问题，尚未可知是否能自动生成在手机内置存储中
