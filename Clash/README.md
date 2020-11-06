@@ -1,7 +1,14 @@
 ## Clash For Windows
 > Time：2020/11/06 12:17
 
-Place `config.yaml` in `$HOME/.config/clash/config.yaml`
+#### Home Directory
+- **安装版默认地址：`$HOME/.config/clash`**
+
+- **便携版默认地址**
+  + 安装文件根目录下手动创建的新文件夹`data`将作为`Home Directory`
+  + 若未手动新建`data`文件夹，将与安装版默认地址相同
+
+**Place `config.yaml` in `Home Directory`**
 
 ~~`proxy-providers`里的类型为`file`，故需准备好代理文件，放置路径参考配置里的路径即可~~
 
