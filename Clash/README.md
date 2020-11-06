@@ -5,7 +5,7 @@ Place `config.yaml` in `$HOME/.config/clash/config.yaml`
 
 ~~`proxy-providers`里的类型为`file`，故需准备好代理文件，放置路径参考配置里的路径即可~~
 
-**`proxy-providers`使用`http`类型，`url`里使用 [pastebin](https://pastebin.com) 托管代码片段即可（`unlisted`）**
+**`proxy-providers`使用`http`类型，`url`里使用 [pastebin](https://pastebin.com) 托管代理节点代码片段即可（`unlisted`）**
 
 **`gist.github.com`更好，可惜国内无法直连**
 
