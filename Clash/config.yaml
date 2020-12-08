@@ -13,7 +13,7 @@ socks-port: 7891
 # redir-port: 7892
 
 # HTTP(S) and SOCKS5 server on the same port
-mixed-port: 7890
+# mixed-port: 7890
 
 # authentication of local SOCKS5/HTTP(S) server
 # authentication:
@@ -74,7 +74,7 @@ hosts:
   'mtalk.google.com': 108.177.125.188
   'smtp.gmail.com': 74.125.20.109
   't.cn': 203.107.55.116
-  # '*.clash.dev': 127.0.0.1
+  '*.clash.dev': 127.0.0.1
   # '.dev': 127.0.0.1
   # 'alpha.clash.dev': '::1'
 
@@ -247,7 +247,7 @@ proxy-providers:
     type: http
     path: ./DuangCloud.yaml
     # url: 
-    interval: 604800  # seconds --> 7 days
+    interval: 259200  # seconds --> 3 days
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -363,46 +363,46 @@ rule-providers:
     interval: 172800  # seconds --> 2 days
 
   # streaming media rule set
-  Streaming:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Streaming.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/Streaming.yaml
-    interval: 172800  # seconds --> 2 days
+  # Streaming:
+  #   type: http
+  #   behavior: classical
+  #   path: ./RuleSet/Streaming.yaml
+  #   url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/Streaming.yaml
+  #   interval: 172800  # seconds --> 2 days
 
   # advertisement
-  Advertising:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Advertising.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Guard/Advertising.yaml
-    interval: 172800  # seconds --> 2 days
+  # Advertising:
+  #   type: http
+  #   behavior: classical
+  #   path: ./RuleSet/Advertising.yaml
+  #   url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Guard/Advertising.yaml
+  #   interval: 172800  # seconds --> 2 days
 
-  Hijacking:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Hijacking.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Guard/Hijacking.yaml
-    interval: 172800  # seconds --> 2 days
+  # Hijacking:
+  #   type: http
+  #   behavior: classical
+  #   path: ./RuleSet/Hijacking.yaml
+  #   url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Guard/Hijacking.yaml
+  #   interval: 172800  # seconds --> 2 days
 
-  Privacy:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Privacy.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Guard/Privacy.yaml
-    interval: 172800  # seconds --> 2 days
+  # Privacy:
+  #   type: http
+  #   behavior: classical
+  #   path: ./RuleSet/Privacy.yaml
+  #   url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Guard/Privacy.yaml
+  #   interval: 172800  # seconds --> 2 days
   # https://github.com/DivineEngine/Profiles/tree/master/Clash end
 
 
   # https://github.com/Loyalsoldier/clash-rules start here
 
   # advertising domain list
-  reject:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
-    path: ./RuleSet/reject.yaml
-    interval: 172800  # seconds --> 2 days
+  # reject:
+  #   type: http
+  #   behavior: domain
+  #   url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+  #   path: ./RuleSet/reject.yaml
+  #   interval: 172800  # seconds --> 2 days
 
   # iCloud domain list
   icloud:
@@ -505,12 +505,12 @@ rules:
   # Global Area Network
   - RULE-SET,Global,Auto
 
-  - RULE-SET,Streaming,Auto
+  # - RULE-SET,Streaming,Auto
 
   # Use ChinaIP from ipipdotnet to solve the problem of inaccurate data
   - RULE-SET,ChinaIP,DIRECT,no-resolve
 
-  - RULE-SET,reject,REJECT
+  # - RULE-SET,reject,REJECT
   - RULE-SET,icloud,DIRECT
   - RULE-SET,apple,DIRECT
   - RULE-SET,google,DIRECT
@@ -526,9 +526,9 @@ rules:
   # GeoIP China
   # - GEOIP,CN,DIRECT,no-resolve
 
-  - RULE-SET,Advertising,REJECT
-  - RULE-SET,Hijacking,REJECT
-  - RULE-SET,Privacy,REJECT
+  # - RULE-SET,Advertising,REJECT
+  # - RULE-SET,Hijacking,REJECT
+  # - RULE-SET,Privacy,REJECT
 
   # The Match rule must be written after all other rules
   # It defines the default policy for requests which are not matched by any other rules
