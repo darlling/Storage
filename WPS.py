@@ -1,7 +1,6 @@
 # !/usr/bin/env python3
 # -*- coding:utf-8 -*-
 from asyncio import gather, run, sleep
-from datetime import datetime
 
 from requests import post
 
@@ -28,22 +27,22 @@ invite_sid = [
 ]
 
 
-async def wps_invite(userid: int) -> None:
-    for index, each in enumerate(invite_sid):
-        header = {'sid': each}
+async def invite(userid: int) -> None:
+    for index, item in enumerate(invite_sid):
+        header = {'sid': item}
         res = post("https://zt.wps.cn/2018/clock_in/api/invite",
                    headers=header,
                    data={'invite_userid': userid})
         if res.status_code == 200:
             print(f"{userid}: 邀请第 {index+1} 人成功")
         else:
-            print("邀请失败")
+            print(f"{userid}: 邀请第 {index+1} 人失败")
         await sleep(5)
 
 
 async def main():
-    await gather(wps_invite(wpsid[0]), wps_invite(wpsid[1]),
-                 wps_invite(wpsid[2]), wps_invite(wpsid[3]))
+    await gather(invite(wpsid[0]), invite(wpsid[1]), invite(wpsid[2]),
+                 invite(wpsid[3]))
 
 
 def main_handler():
