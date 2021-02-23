@@ -27,7 +27,7 @@ invite_sid = [
 ]
 
 
-async def invite(userid: int) -> None:
+async def invite(userid: str) -> None:
     for index, item in enumerate(invite_sid):
         header = {'sid': item}
         res = post("https://zt.wps.cn/2018/clock_in/api/invite",
@@ -41,8 +41,7 @@ async def invite(userid: int) -> None:
 
 
 async def main():
-    await gather(invite(wpsid[0]), invite(wpsid[1]), invite(wpsid[2]),
-                 invite(wpsid[3]))
+    await gather(*(invite(id) for id in wpsid))
 
 
 def main_handler():
